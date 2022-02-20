@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,7 @@ public class OrderPage extends BasePage {
         return products;
     }
 
+    @Step("Удаление продуктов из корзины")
     public void deleteProducts() {
         deleteLinks.stream().forEach(l -> l.click());
     }

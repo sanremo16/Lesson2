@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,17 +19,19 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Заполнить поле логина")
     public LoginPage fillLogin(String login) {
         inputLogin.sendKeys(login);
         return this;
     }
 
+    @Step("Заполнить поле пароля")
     public LoginPage fillPasswd(String passwd) {
         inputPassword.sendKeys(passwd);
         return this;
     }
 
-
+    @Step("Заполнение полей логина и пароля, и вход на сайт")
     public MainPage login(String login, String pswd) {
         inputLogin.sendKeys(login);
         inputPassword.sendKeys(pswd);
